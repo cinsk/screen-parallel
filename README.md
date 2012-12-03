@@ -49,13 +49,13 @@ Suppose that you have a data file, and each line represents work-item, and you w
     
 If you want to divide `input.txt` into 5 pieces, and you want to run `process.sh` for each piece, then:
 
-    $ screen-parallel.sh -i input -c 5 ./process.sh
+    $ screen-parallel.sh -i input.txt -c 5 ./process.sh
     
 If your script accepts each data from STDIN, run as:
 
-    $ screen-parallel.sh -i input -c 5 -p ./process.sh
+    $ screen-parallel.sh -i input.txt -c 5 -p ./process.sh
 
 The script will accept command line arguments which is similar to that of find(1).  For example if you want to accept the pathname of the piece in the middle of the command-line, use "{}" to mark the position of the pathname, like:
 
-    $ screen-parallel.sh -i input -c 5 ./process.sh -someopt1 {} -someopt2
+    $ screen-parallel.sh -i input.txt -c 5 ./process.sh -someopt1 {} -someopt2
 
